@@ -1,0 +1,30 @@
+// Write a function removeDuplicates() which receives a array as input and remove the duplicate elements from the array. After the function call, the array will contain a set of unique elements..
+
+import java.util.Scanner;
+class Main{
+static int removeDuplicates(int arr[], int size)
+{
+  int i = 1, j = 1;
+       while (i < size){
+           if (arr[i] != arr[i-1]){
+               arr[j] = arr[i];
+               j++;
+           }
+           i++;
+       }
+       return j;
+}
+
+ public static void main(String[] args)
+  {
+    int i, size = 0;
+    Scanner sc = new Scanner(System.in);
+    size = Integer.parseInt(sc.nextLine().trim());
+    int arr[] = new int[size];
+    for(i = 0; i < size; i++) 
+    arr[i] = Integer.parseInt(sc.nextLine().trim());
+    int newsize = removeDuplicates(arr, size);
+    for (i = 0; i < newsize; i++) 
+      System.out.println(arr[i]);
+  }
+}
